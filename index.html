@@ -11,48 +11,108 @@
         #music {
             display: none;
         }
-        .center-div
-		{
-		  position: absolute;
-		  margin: auto;
-		  top: 0;
-		  left: 0;
-		  right: 0;
-		  bottom: 0;
-		  width: 500px;
-		  height: 500px;
-		}
+        .center-div {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 500px;
+            height: 500px;
+        }
     </style>
 
     <div class="center-div">
-<img src="https://cdn.discordapp.com/attachments/186941943941562369/274949539343892480/SDD_logo_trans.png"></div>
+        <img src="https://cdn.discordapp.com/attachments/186941943941562369/274949539343892480/SDD_logo_trans.png">
+    </div>
 
     <div id="music">
         <audio autoplay>
             <source src="soshmusic.mp3" type="audio/mpeg">
-            <p>If you can read this, your browser does not support the audio element.</p>
+                <p>If you can read this, your browser does not support the audio element.</p>
         </audio>
     </div>
 
 </body>
 
 </html>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script type="text/javascript">
     function changeBg(r, g, b) {
-    console.log({r, g, b})
-    document.body.style.background = '#' + r  + g + b;
-}
+        console.log({
+            r, g, b
+        })
+        document.body.style.background = '#' + r + g + b;
+    }
 
-function randHex() {
-    return "abcdef0123456789"[Math.floor(Math.random()*16)]
-}
+    function randHex() {
+        return "abcdef0123456789" [Math.floor(Math.random() * 16)]
+    }
 
-function randomColourValue() {
-    return randHex() + randHex();
-}
+    function randomColourValue() {
+        return randHex() + randHex();
+    }
 
-setInterval(function() {
-    changeBg(randomColourValue(), randomColourValue(), randomColourValue());
-}, 100);
+    setInterval(function() {
+        changeBg(randomColourValue(), randomColourValue(), randomColourValue());
+    }, 100);
+</script>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SDD POWA</title>
+</head>
+
+<body>
+
+    <style type="text/css">
+        #music {
+            display: none;
+        }
+        .center-div {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+
+    <div class="center-div">
+        <img src="https://cdn.discordapp.com/attachments/186941943941562369/274949539343892480/SDD_logo_trans.png">
+    </div>
+
+    <div id="music">
+        <audio autoplay>
+            <source src="soshmusic.mp3" type="audio/mpeg">
+                <p>If you can read this, your browser does not support the audio element.</p>
+        </audio>
+    </div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+    function changeBg(r, g, b) {
+        console.log({
+            r, g, b
+        })
+        document.body.style.background = '#' + r + g + b;
+    }
+
+    function randHex() {
+        return "abcdef0123456789" [Math.floor(Math.random() * 16)]
+    }
+
+    function randomColourValue() {
+        return randHex() + randHex();
+    }
+
+    setInterval(function() {
+        changeBg(randomColourValue(), randomColourValue(), randomColourValue());
+    }, 100);
 </script>
