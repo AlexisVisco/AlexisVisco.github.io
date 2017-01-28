@@ -1,59 +1,80 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>SDD POWA</title>
-</head>
-
-<body>
-
-    <style type="text/css">
-        #music {
-            display: none;
-        }
-        .center-div {
-            position: absolute;
-            margin: auto;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 500px;
-            height: 500px;
-        }
-    </style>
-
-    <div class="center-div">
-        <img src="https://cdn.discordapp.com/attachments/186941943941562369/274949539343892480/SDD_logo_trans.png">
-    </div>
-
-    <div id="music">
-        <audio autoplay>
-            <source src="soshmusic.mp3" type="audio/mpeg">
-                <p>If you can read this, your browser does not support the audio element.</p>
-        </audio>
-    </div>
-
-</body>
-
+<html >
+   <head>
+      <meta charset="UTF-8">
+      <title>SDD POWER</title>
+      <style>
+         #logo {
+         position: absolute;
+         margin: auto;
+         left: 0;
+         right: 0;
+         top: 0;
+         bottom: 0;
+         width: 300px;
+         height: 500px;
+         }
+      </style>
+   </head>
+   <body translate="no" >
+      <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="500px" viewBox="0 0 300 500" enable-background="new 0 0 300 500" xml:space="preserve">
+         <g>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M67.777,371.023c11.307-14.219,20.198-25.402,33.521-42.16
+               c-18.791,0-31.167,0.422-43.507-0.087c-27.218-1.113-41.142-14.024-41.422-40.845c-0.638-60.656-0.501-121.319-0.043-181.976
+               c0.188-25.385,14.507-38.872,39.495-40.178c16.498-0.856,33.162-1.295,49.602-0.027c35.151,2.715,67.736,1.188,86.855-35.487
+               c4.77-9.146,13.995-11.166,24.462-7.638c0.659,10.487-8.254,15.414-13.615,21.896c-39.816,48.162-80.304,95.767-120.066,143.972
+               c-24.992,30.303-17.834,56.386,18.409,70.414c35.852,13.877,44.107,43.628,20.617,74.311
+               C92.938,371.289,92.938,371.289,67.777,371.023z"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M232.024,140.382c-10.152,13.615-19.173,25.713-31.842,42.712
+               c17.539,0,29.955-0.465,42.32,0.095c27.104,1.243,40.832,14.243,41.107,41.119c0.615,59.718,0.572,119.458,0.07,179.18
+               c-0.24,28.782-13.59,42.058-42.225,42.856c-24.785,0.696-49.72,1.585-74.394-0.254c-21.606-1.606-36.553,5.354-48.726,23.07
+               c-7.875,11.461-15.534,26.663-38.121,18.698c18.064-21.723,35.353-42.582,52.723-63.382c28.854-34.554,58.22-68.688,86.482-103.716
+               c22.082-27.367,13.93-54.567-18.913-67.296c-39.439-15.286-47.789-44.676-19.467-76.981
+               C194.114,161.571,200.8,135.126,232.024,140.382z"/>
+         </g>
+         <div id="music">
+            <audio autoplay>
+               <source src="soshmusic.mp3" type="audio/mpeg">
+               <p>If you can read this, your browser does not support the audio element.</p>
+            </audio>
+         </div>
+      </svg>
+      <script>
+         function changeBg(r, g, b) {
+         console.log({
+             r,
+             g,
+             b
+         });
+         document.body.style.background = '#' + r + g + b;
+         
+         }
+         var logo = document.getElementById('logo');
+         
+         function changeLogo(r, g, b) {
+         console.log({
+             r,
+             g,
+             b
+         });
+         logo.style.fill = '#' + r + g + b;
+         }
+         
+         function randHex() {
+         return "abcdef0123456789" [Math.floor(Math.random() * 16)];
+         }
+         
+         function randomColourValue() {
+         return randHex() + randHex();
+         }
+         window.even = true;
+         setInterval(function() {
+         changeBg(randomColourValue(), randomColourValue(), randomColourValue());
+         window.even = !window.even;
+         if (window.even) {
+             changeLogo(randomColourValue(), randomColourValue(), randomColourValue());
+         }
+         }, 500);
+      </script>
+   </body>
 </html>
-<script type="text/javascript">
-    function changeBg(r, g, b) {
-        console.log({
-            r, g, b
-        })
-        document.body.style.background = '#' + r + g + b;
-    }
-
-    function randHex() {
-        return "abcdef0123456789" [Math.floor(Math.random() * 16)]
-    }
-
-    function randomColourValue() {
-        return randHex() + randHex();
-    }
-
-    setInterval(function() {
-        changeBg(randomColourValue(), randomColourValue(), randomColourValue());
-    }, 100);
-</script>
