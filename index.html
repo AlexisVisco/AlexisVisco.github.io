@@ -40,41 +40,51 @@
          </div>
       </svg>
       <script>
-         function changeBg(r, g, b) {
-         console.log({
-             r,
-             g,
-             b
-         });
-         document.body.style.background = '#' + r + g + b;
-         
-         }
-         var logo = document.getElementById('logo');
-         
-         function changeLogo(r, g, b) {
-         console.log({
-             r,
-             g,
-             b
-         });
-         logo.style.fill = '#' + r + g + b;
-         }
-         
-         function randHex() {
-         return "abcdef0123456789" [Math.floor(Math.random() * 16)];
-         }
-         
-         function randomColourValue() {
-         return randHex() + randHex();
-         }
-         window.even = true;
-         setInterval(function() {
-         changeBg(randomColourValue(), randomColourValue(), randomColourValue());
-         window.even = !window.even;
-         if (window.even) {
-             changeLogo(randomColourValue(), randomColourValue(), randomColourValue());
-         }
-         }, 517 );
-      </script>
+    function changeBg(r, g, b) {
+    document.body.style.background = '#' + r + g + b;
+}
+var logo = document.getElementById('logo');
+
+function changeLogo(r, g, b) {
+    logo.style.fill = '#' + r + g + b;
+}
+
+function randHex() {
+    return "abcdef0123456789"[Math.floor(Math.random() * 16)];
+}
+
+function randomColourValue() {
+    return randHex() + randHex();
+}
+
+function compareColours(first, second) {
+    first = first.map(s => {return parseInt(s, 16)});
+    second = second.map(s => {return parseInt(s, 16)});
+    var reddiff = Math.abs(first[0]-second[0]);
+    var greendiff = Math.abs(first[1]-second[1]);
+    var bluediff = Math.abs(first[2]-second[2]);
+    
+    var globaldiff = (reddiff + greendiff + bluediff)/(3*255);
+    console.log('Global diff between', first, 'and', second, 'is', globaldiff);
+    return Math.floor(globaldiff*100);
+}
+
+window.even = true;
+window.logoColour = [0, 0, 0];
+window.bgColour = [255, 255, 255];
+
+setInterval(function() {
+    if (window.even = !window.even) {
+        window.logoColour = [randomColourValue(), randomColourValue(), randomColourValue()];
+    }
+    window.bgColour = [randomColourValue(), randomColourValue(), randomColourValue()];
+    while(compareColours(window.logoColour, window.bgColour) < 40) {
+        window.bgColour = [randomColourValue(), randomColourValue(), randomColourValue()];
+    }
+    
+    changeLogo.apply(this, window.logoColour);
+    changeBg.apply(this, window.bgColour);
+}, 516);
+  </script>
    </body>
 </html>
